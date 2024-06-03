@@ -8,14 +8,14 @@
 }
 
 body{
-    background-color: #dfdfdf;
+    background-color: #121f36;
 }
 
 .card{
     width: 90%;
     max-width: 470px;
-    background: #a2b1c5;
-    color: white;
+    background: #a2b2c5;
+    color: #121f36;
     margin: 100px auto 0;
     border-radius: 20px;
     padding: 40px 35px;
@@ -34,17 +34,13 @@ body{
     outline: 0;
     background-color: #ffffff57;
     font-weight: 500;
-    color: #fff;
+    color: #242f41;
     padding: 10px 25px;
     height: 60px;
     border-radius: 30px;
     flex: 1;
     margin-right: 16px;
     font-size: 18px;
-}
-
-.search input::placeholder{
-    color: #fff;
 }
 
 .search button{
@@ -55,6 +51,11 @@ body{
     width: 60px;
     height: 60px;
     cursor: pointer;
+}
+
+.search button:hover{
+    background-color: #ffffffb2;
+    transition: .3s all ease-in-out;
 }
 
 .search button img{
@@ -89,7 +90,7 @@ body{
 }
 
 .col:first-child{
-    border-right: 1px solid white;
+    border-right: 2px solid #121f36;
 }
 
 .col:nth-child(2){

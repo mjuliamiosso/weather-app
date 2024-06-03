@@ -23,19 +23,19 @@ async function checkWeather(city) {
         //img update
         if(data.weather[0].main=="Clouds"){
             weatherIcon.src = "./img/clouds.png"
-            document.querySelector(".card").style.backgroundColor = "#a9d6ff"
+            document.querySelector(".card").style.background = "linear-gradient(140deg, rgba(169,214,255,1) 0%, rgba(202,225,255,1) 100%)"
         }else if(data.weather[0].main=="Clear"){
             weatherIcon.src = "./img/clear.png"
-            document.querySelector(".card").style.backgroundColor = "#6bb2f3"
+            document.querySelector(".card").style.background = "linear-gradient(140deg, rgba(96,172,242,1) 0%, rgba(202,225,255,1) 100%)"
         }else if(data.weather[0].main=="Rain"){
             weatherIcon.src = "./img/rain.png"
-            document.querySelector(".card").style.backgroundColor = "#7395b4"
+            document.querySelector(".card").style.background = "linear-gradient(140deg, rgba(115,149,180,1) 0%, rgba(202,225,255,1) 100%)"
         }else if(data.weather[0].main=="Drizzle"){
             weatherIcon.src = "./img/drizzle.png"
-            document.querySelector(".card").style.backgroundColor = "#bccddd"
+            document.querySelector(".card").style.background = "linear-gradient(140deg, rgba(188,205,221,1) 0%, rgba(202,225,255,1) 100%)"
         }else if(data.weather[0].main=="Mist"){
             weatherIcon.src = "./img/mist.png"
-            document.querySelector(".card").style.backgroundColor = "#83abd0"
+            document.querySelector(".card").style.background= "linear-gradient(140deg, rgba(131,171,208,1) 0%, rgba(202,225,255,1) 100%)"
         }
     
         document.querySelector(".weather").style.display = "block"
