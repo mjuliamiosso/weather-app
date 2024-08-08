@@ -9,7 +9,7 @@
 }
 
 :root{
-    --blue: #2a79d381;
+    --blue: #4f93e091;
     --light-blue: #cef0ff60;
     --yellow: #ffcd4f;
 }
@@ -34,14 +34,14 @@ header h1{
     text-align: center;
     font-size: 40px;
     font-weight: bold;
-    margin-top: 100px;
+    margin-top: 94px;
     margin-bottom: 65px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
 main{
-    max-width: 820px;
+    max-width: 900px;
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
@@ -177,6 +177,7 @@ main{
     color: #ffffffa4;
     display: flex;
     align-items: center;
+    font-size: 14px;
 }
 
 .week-text img{
@@ -190,10 +191,20 @@ main{
     padding: 10px 0;
 }
 
+.week-day{
+    font-size: 14px;
+}
+
 .week-weather{
     display: flex;
     align-items: center;
     gap: 5px;
+    font-size: 14px;
+}
+
+.week-weather span{
+    font-size: 12px;
+    color: #ffffffa4;
 }
 
 /* Footer */
@@ -206,8 +217,155 @@ footer{
 }
 
 footer p{
-    width: 820px;
+    width: 900px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+/* RESPONSIVO */
+@media(min-width: 900px){
+    header h1{
+        font-size: 64px;
+    }
+    
+    main{
+        max-width: 1440px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    
+    /* Barra de Pesquisa */
+    .search{
+        display: flex;
+        height: 70px;
+    }
+    
+    .search input{
+        padding-left: 20px;
+        font-size: 18px;
+    }
+    
+    .search button{
+        font-size: 32px;
+    }
+    
+    /* Previsão do Dia */
+    .location{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .location h3{
+        font-size: 58px;
+    }
+    
+    .location p{
+        font-size: 28px;
+        margin-top: -20px;
+    }
+    
+    .location h2{
+        font-size: 115px;
+    }
+    
+    /* Umidade e Vento */
+    .status{
+        padding: 20px 30px;
+    }
+    .status-container i{
+        font-size: 42px;
+    }
+    
+    .status-container p{
+        font-size: 36px;
+        line-height: 25px;
+    }
+    
+    .status-container p span{
+        font-size: 24px;
+    }
+    
+    /* Previsão do Dia */
+    .day-preview{
+        margin-top: 0;
+        padding: 20px 30px;
+    }
+    
+    .day-container .day-time{
+        font-size: 20px;
+    }
+    
+    .day-container .day-weather{
+        font-size: 20px;
+    }
+    
+    .day-container .day-weather span{
+        font-size: 16px;
+    }
+    
+    .day-container img{
+        width: 36px;
+    }
+    
+    /* Previsão Semanal */
+    .week{
+        padding: 20px 30px;
+    }
+    
+    .week-text{
+        font-size: 20px;
+    }
+
+    .week-text img{
+        padding-right: 5px;
+        width: 25px;
+    }
+
+    .week-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .week-day{
+        font-size: 20px;
+    }
+    
+    .week-weather{
+        font-size: 20px;
+    }
+
+    .week-weather span{
+        font-size: 16px;
+    }
+
+    .week-weather img{
+        width: 30px;
+    }
+    
+    /* Divisão do conteudo */
+    .right-side{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    /* Footer */
+    footer{
+        height: 100px;
+        background-color: rgb(66, 149, 226);
+        margin-top: 65px;
+        display: flex;
+        align-items: center;
+    }
+    
+    footer p{
+        width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: end;
+    }
 }
