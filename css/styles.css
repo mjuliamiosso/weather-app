@@ -15,7 +15,7 @@
 }
 
 .text-shadow{
-    text-shadow: 0 4px 4px rgba(24, 27, 51, 0.493);
+    text-shadow: 0 4px 4px rgba(24, 27, 51, 0.356);
 }
 
 hr{
@@ -85,17 +85,18 @@ main{
     text-align: center;
 }
 
-.location h3{
-    font-size: 37px;
+.location img{
+    width: 70px;
 }
 
-.location p{
-    font-size: 18px;
-    margin-top: -10px;
+.location h3{
+    font-size: 37px;
+    margin-top: -30px;
+    font-weight: 500;
 }
 
 .location h2{
-    font-size: 74px;
+    font-size: 64px;
 }
 
 /* Umidade e Vento */
@@ -209,7 +210,7 @@ main{
 
 /* Footer */
 footer{
-    height: 100px;
+    height: 80px;
     background-color: rgb(66, 149, 226);
     margin-top: 65px;
     display: flex;
@@ -258,17 +259,18 @@ footer p{
         text-align: center;
     }
     
-    .location h3{
-        font-size: 58px;
+    .location img{
+        width: 95px;
     }
     
-    .location p{
-        font-size: 28px;
-        margin-top: -20px;
+    .location h3{
+        font-size: 48px;
+        margin-top: -37px;
+        font-weight: 500;
     }
     
     .location h2{
-        font-size: 115px;
+        font-size: 96px;
     }
     
     /* Umidade e Vento */
@@ -317,6 +319,7 @@ footer p{
     
     .week-text{
         font-size: 20px;
+        margin-bottom: 5px;
     }
 
     .week-text img{
@@ -328,7 +331,7 @@ footer p{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 0;
+        padding: 12px 0;
     }
 
     .week-day{
@@ -355,17 +358,12 @@ footer p{
     }
     /* Footer */
     footer{
-        height: 100px;
-        background-color: rgb(66, 149, 226);
-        margin-top: 65px;
-        display: flex;
-        align-items: center;
+        margin-top: 85px;
     }
     
     footer p{
         width: 1440px;
-        margin-left: auto;
-        margin-right: auto;
         text-align: end;
+        padding-right: 10px;
     }
 }

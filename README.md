@@ -8,3 +8,7 @@ Fiz este site para praticar a implementação de APIs, onde você pode ver o cli
 * **HTML**
 * **CSS**
 * **JavaScript**
+
+## 🔧 Ferramentas
+
+* **font-awesome**
