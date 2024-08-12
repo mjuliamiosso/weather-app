@@ -1,5 +1,40 @@
-// const apiKey = "66a514829c5d31614e9aadd6c85d6d40"
-// const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&lang=pt_br&q="
+const apiKey = "66a514829c5d31614e9aadd6c85d6d40"
+const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?units=metric&lang=pt_br&q="
+
+let city = document.getElementById('search')
+let weatherIcon = document.getElementById('weatherIcon')
+
+//CHECAR O CLIMA
+async function checkWeather(){
+    const response = await fetch(apiUrl + city.value + `&appid=${apiKey}`)
+    if(response.status == 404){
+        console.log("error 404")
+    } else {
+        let data = await response.json()
+        document.getElementById('temp').innerHTML = Math.round(data.list[0].main.temp) + " Cº"
+        document.getElementById('city').innerHTML = data.city.name
+        document.getElementById('humidity').innerHTML = data.list[0].main.humidity + "% <br> <span>Umidade</span>"
+        document.getElementById('wind').innerHTML = data.list[0].wind.speed + "km/h <br> <span>Vento</span>"
+
+        //UPDATE DO ICONE DE ACORDO COM O CLIMA
+        if(data.list[0].weather[0].main == "Clear"){
+            weatherIcon.src = "./img/clear-day.svg"
+            
+        } else if (data.list[0].weather[0].main == "Clouds"){
+            weatherIcon.src = "./img/cloudy.svg"
+        }else if (data.list[0].weather[0].main == "Rain"){
+            weatherIcon.src = "./img/rain.svg"
+        }else if (data.list[0].weather[0].main == "Drizzle"){
+            weatherIcon.src = "./img/drizzle.svg"
+        }else if (data.list[0].weather[0].main == "Mist"){
+            weatherIcon.src = "./img/mist.svg"
+        }else if (data.list[0].weather[0].main == "Snow"){
+            weatherIcon.src = "./img/snow.svg"
+        }
+    }
+    
+
+}
 
 // const searchBox = document.querySelector(".search input")
 // const searchBtn = document.querySelector(".search button")
@@ -21,18 +56,6 @@
 //         document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + " km/h"
     
 //         //img update
-//         if(data.weather[0].main=="Clouds"){
-//             weatherIcon.src = "./img/clouds.png"
-//             document.querySelector(".card").style.background = "linear-gradient(140deg, rgba(169,214,255,1) 0%, rgba(202,225,255,1) 100%)"
-//         }else if(data.weather[0].main=="Clear"){
-//             weatherIcon.src = "./img/clear.png"
-//             document.querySelector(".card").style.background = "linear-gradient(140deg, rgba(96,172,242,1) 0%, rgba(202,225,255,1) 100%)"
-//         }else if(data.weather[0].main=="Rain"){
-//             weatherIcon.src = "./img/rain.png"
-//             document.querySelector(".card").style.background = "linear-gradient(140deg, rgba(115,149,180,1) 0%, rgba(202,225,255,1) 100%)"
-//         }else if(data.weather[0].main=="Drizzle"){
-//             weatherIcon.src = "./img/drizzle.png"
-//             document.querySelector(".card").style.background = "linear-gradient(140deg, rgba(188,205,221,1) 0%, rgba(202,225,255,1) 100%)"
 //         }else if(data.weather[0].main=="Mist"){
 //             weatherIcon.src = "./img/mist.png"
 //             document.querySelector(".card").style.background= "linear-gradient(140deg, rgba(131,171,208,1) 0%, rgba(202,225,255,1) 100%)"
