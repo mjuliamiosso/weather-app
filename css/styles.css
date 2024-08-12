@@ -10,6 +10,11 @@
 
 :root{
     --blue: #4f93e091;
+    --grey: #565c6391;
+    --aqua: #3c7a8591;
+    --green: #4b836e91;
+    --light-grey: #756d6991;
+    --white: #e7e9e991;
     --light-blue: #cef0ff60;
     --yellow: #ffcd4f;
 }
@@ -24,7 +29,7 @@ hr{
 }
 
 body{
-    background-image: url(../img/clouds-background.png);
+    background-color: #4D5465;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -34,7 +39,7 @@ header h1{
     text-align: center;
     font-size: 40px;
     font-weight: bold;
-    margin-top: 94px;
+    margin-top: 69px;
     margin-bottom: 65px;
     padding-left: 10px;
     padding-right: 10px;
@@ -102,7 +107,6 @@ main{
 /* Umidade e Vento */
 .status{
     backdrop-filter: blur(3px);
-    background-color: var(--blue);
     border-radius: 6px;
     padding: 10px 20px;
     display: grid;
@@ -137,7 +141,6 @@ main{
     backdrop-filter: blur(3px);
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: var(--blue);
     border-radius: 7px;
     display: flex;
     justify-content: space-between;
@@ -170,7 +173,6 @@ main{
     margin-top: 20px;
     padding: 10px 20px;
     border-radius: 7px;
-    background-color: var(--blue);
     backdrop-filter: blur(3px);
 }
 
@@ -211,7 +213,7 @@ main{
 /* Footer */
 footer{
     height: 80px;
-    background-color: rgb(66, 149, 226);
+    background-color: rgb(24, 29, 34);
     margin-top: 65px;
     display: flex;
     align-items: center;

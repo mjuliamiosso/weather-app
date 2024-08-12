@@ -1,8 +1,9 @@
 const apiKey = "66a514829c5d31614e9aadd6c85d6d40"
 const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?units=metric&lang=pt_br&q="
 
-let city = document.getElementById('search')
-let weatherIcon = document.getElementById('weatherIcon')
+const city = document.getElementById('search')
+const weatherIcon = document.getElementById('weatherIcon')
+const body = document.getElementsByTagName('body')[0]
 
 //CHECAR O CLIMA
 async function checkWeather(){
@@ -17,19 +18,53 @@ async function checkWeather(){
         document.getElementById('wind').innerHTML = data.list[0].wind.speed + "km/h <br> <span>Vento</span>"
 
         //UPDATE DO ICONE DE ACORDO COM O CLIMA
+        //Limpo
         if(data.list[0].weather[0].main == "Clear"){
             weatherIcon.src = "./img/clear-day.svg"
-            
-        } else if (data.list[0].weather[0].main == "Clouds"){
+            body.style.backgroundImage = 'url(../img/clear-background.png)'
+            document.querySelector('.status').style.backgroundColor="var(--blue)"
+            document.querySelector('.day-preview').style.backgroundColor="var(--blue)"
+            document.querySelector('.week').style.backgroundColor="var(--blue)"
+        } 
+        //Nuvem
+        else if (data.list[0].weather[0].main == "Clouds"){
             weatherIcon.src = "./img/cloudy.svg"
-        }else if (data.list[0].weather[0].main == "Rain"){
+            body.style.backgroundImage = 'url(../img/cloudy-background.jpg)'
+            document.querySelector('.status').style.backgroundColor="var(--grey)"
+            document.querySelector('.day-preview').style.backgroundColor="var(--grey)"
+            document.querySelector('.week').style.backgroundColor="var(--grey)"
+        }
+        //Chuva
+        else if (data.list[0].weather[0].main == "Rain"){
             weatherIcon.src = "./img/rain.svg"
-        }else if (data.list[0].weather[0].main == "Drizzle"){
+            body.style.backgroundImage = 'url(../img/rainy-background.jpg)'
+            document.querySelector('.status').style.backgroundColor="var(--aqua)"
+            document.querySelector('.day-preview').style.backgroundColor="var(--aqua)"
+            document.querySelector('.week').style.backgroundColor="var(--aqua)"
+        }
+        //Chuvisco
+        else if (data.list[0].weather[0].main == "Drizzle"){
             weatherIcon.src = "./img/drizzle.svg"
-        }else if (data.list[0].weather[0].main == "Mist"){
+            body.style.backgroundImage = 'url(../img/drizzle-background.jpg)'
+            document.querySelector('.status').style.backgroundColor="var(--green)"
+            document.querySelector('.day-preview').style.backgroundColor="var(--green)"
+            document.querySelector('.week').style.backgroundColor="var(--green)"
+        }
+        //Névoa
+        else if (data.list[0].weather[0].main == "Mist"){
             weatherIcon.src = "./img/mist.svg"
-        }else if (data.list[0].weather[0].main == "Snow"){
+            body.style.backgroundImage = 'url(../img/mist-background.jpg)'
+            document.querySelector('.status').style.backgroundColor="var(--light-grey)"
+            document.querySelector('.day-preview').style.backgroundColor="var(--light-grey)"
+            document.querySelector('.week').style.backgroundColor="var(--light-grey)"
+        }
+        //Neve
+        else if (data.list[0].weather[0].main == "Snow"){
             weatherIcon.src = "./img/snow.svg"
+            body.style.backgroundImage = 'url(../img/snow-background.jpg)'
+            document.querySelector('.status').style.backgroundColor="var(--white)"
+            document.querySelector('.day-preview').style.backgroundColor="var(--white)"
+            document.querySelector('.week').style.backgroundColor="var(--white)"
         }
     }
     

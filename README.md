@@ -13,3 +13,4 @@ Fiz este site para praticar a implementação de APIs, onde você pode ver o cli
 
 * **font-awesome**
 * **[icones](https://github.com/basmilius/weather-icons)**
+* **[Imagens](https://www.freepik.com/)**
