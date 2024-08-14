@@ -15,7 +15,7 @@
     --green: #4b836e91;
     --light-grey: #756d6991;
     --white: #e7e9e991;
-    --light-blue: #cef0ff60;
+    --light-blue: #ecf9ff60;
     --yellow: #ffcd4f;
 }
 
@@ -52,6 +52,7 @@ main{
     padding-right: 10px;
     margin-left: auto;
     margin-right: auto;
+    height: 58.3vh;
 }
 
 /* Barra de Pesquisa */

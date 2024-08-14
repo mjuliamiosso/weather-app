@@ -4,6 +4,7 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?units=metric&la
 const city = document.getElementById('search')
 const weatherIcon = document.getElementById('weatherIcon')
 const body = document.getElementsByTagName('body')[0]
+let dayPreview = document.querySelector('.day-preview')
 
 //CHECAR O CLIMA
 async function checkWeather(){
@@ -18,7 +19,7 @@ async function checkWeather(){
         document.getElementById('wind').innerHTML = data.list[0].wind.speed + "km/h <br> <span>Vento</span>"
 
         //UPDATE DO ICONE DE ACORDO COM O CLIMA
-        //Limpo
+        //LIMPO
         if(data.list[0].weather[0].main == "Clear"){
             weatherIcon.src = "./img/clear-day.svg"
             body.style.backgroundImage = 'url(../img/clear-background.png)'
@@ -26,7 +27,7 @@ async function checkWeather(){
             document.querySelector('.day-preview').style.backgroundColor="var(--blue)"
             document.querySelector('.week').style.backgroundColor="var(--blue)"
         } 
-        //Nuvem
+        //NUVEM
         else if (data.list[0].weather[0].main == "Clouds"){
             weatherIcon.src = "./img/cloudy.svg"
             body.style.backgroundImage = 'url(../img/cloudy-background.jpg)'
@@ -34,7 +35,7 @@ async function checkWeather(){
             document.querySelector('.day-preview').style.backgroundColor="var(--grey)"
             document.querySelector('.week').style.backgroundColor="var(--grey)"
         }
-        //Chuva
+        //CHUVA
         else if (data.list[0].weather[0].main == "Rain"){
             weatherIcon.src = "./img/rain.svg"
             body.style.backgroundImage = 'url(../img/rainy-background.jpg)'
@@ -42,7 +43,7 @@ async function checkWeather(){
             document.querySelector('.day-preview').style.backgroundColor="var(--aqua)"
             document.querySelector('.week').style.backgroundColor="var(--aqua)"
         }
-        //Chuvisco
+        //CHUVISCO
         else if (data.list[0].weather[0].main == "Drizzle"){
             weatherIcon.src = "./img/drizzle.svg"
             body.style.backgroundImage = 'url(../img/drizzle-background.jpg)'
@@ -50,7 +51,7 @@ async function checkWeather(){
             document.querySelector('.day-preview').style.backgroundColor="var(--green)"
             document.querySelector('.week').style.backgroundColor="var(--green)"
         }
-        //Névoa
+        //NÉVOA
         else if (data.list[0].weather[0].main == "Mist"){
             weatherIcon.src = "./img/mist.svg"
             body.style.backgroundImage = 'url(../img/mist-background.jpg)'
@@ -58,7 +59,7 @@ async function checkWeather(){
             document.querySelector('.day-preview').style.backgroundColor="var(--light-grey)"
             document.querySelector('.week').style.backgroundColor="var(--light-grey)"
         }
-        //Neve
+        //NEVE
         else if (data.list[0].weather[0].main == "Snow"){
             weatherIcon.src = "./img/snow.svg"
             body.style.backgroundImage = 'url(../img/snow-background.jpg)'
@@ -66,6 +67,24 @@ async function checkWeather(){
             document.querySelector('.day-preview').style.backgroundColor="var(--white)"
             document.querySelector('.week').style.backgroundColor="var(--white)"
         }
+
+        //PREVISÃO DE 3 EM 3 HORAS
+        dayList = ''
+        for(var i = 0; i <= 4; i++){
+            let hour = data.list[i].dt_txt
+            const hourSplit = hour.split(" ")
+            dayList += ` 
+                <div class="day-container">
+                    <p class="day-time">${hourSplit[1]}</p>
+                    <p class="day-weather">${Math.round(data.list[i].main.temp)}ºC</p>
+                </div>
+            `
+            dayPreview.innerHTML = dayList
+        }
+
+        //PREVISÃO DA SEMANA
+        let weekDay = document.querySelector('.week-day')
+        weekDay.innerHTML = data.list[1].dt_txt
     }
     
 
