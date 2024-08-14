@@ -5,6 +5,7 @@ const city = document.getElementById('search')
 const weatherIcon = document.getElementById('weatherIcon')
 const body = document.getElementsByTagName('body')[0]
 let dayPreview = document.querySelector('.day-preview')
+let weekPreview = document.querySelector('.week-preview')
 
 //CHECAR O CLIMA
 async function checkWeather(){
@@ -83,8 +84,21 @@ async function checkWeather(){
         }
 
         //PREVISÃO DA SEMANA
-        let weekDay = document.querySelector('.week-day')
-        weekDay.innerHTML = data.list[1].dt_txt
+        weekList = ''
+        for(var i = 7; i <= 40; i += 8){
+            let weekDay = data.list[i].dt_txt
+            const weekSplit = weekDay.split(" ")
+            weekList += `
+                <hr>
+                <div class="week-container">
+                    <p class="week-day">${weekSplit[0]}</p>
+                    <p class="week-weather">${Math.round(data.list[i].main.temp) + " Cº"}</p>
+                </div>
+            `
+            weekPreview.innerHTML = weekList
+        }
+
+
     }
     
 
