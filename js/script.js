@@ -10,8 +10,14 @@ let weekPreview = document.querySelector('.week-preview')
 //CHECAR O CLIMA
 async function checkWeather(){
     const response = await fetch(apiUrl + city.value + `&appid=${apiKey}`)
+    //ERRO
     if(response.status == 404){
-        console.log("error 404")
+        document.querySelector(".error").style.display = "block"
+        document.querySelector(".right-side").style.display = "none"
+        document.querySelector("#main").style.gridTemplateColumns = "1fr"
+        document.querySelector(".status").style.display = "none"
+        document.querySelector(".location").style.display = "none"
+        body.style.backgroundImage = 'none'
     } else {
         let data = await response.json()
         document.getElementById('temp').innerHTML = Math.round(data.list[0].main.temp) + " Cº"
@@ -98,43 +104,11 @@ async function checkWeather(){
             weekPreview.innerHTML = weekList
         }
 
+        document.querySelector(".right-side").style.display = "flex"
+        document.querySelector(".location").style.display = "block"
+        document.querySelector(".status").style.display = "grid"
+        document.querySelector("#main").style.gridTemplateColumns = "1fr 1fr"
+        document.querySelector(".error").style.display = "none"
 
     }
-    
-
 }
-
-// const searchBox = document.querySelector(".search input")
-// const searchBtn = document.querySelector(".search button")
-// const weatherIcon = document.querySelector(".weather-icon")
-
-// async function checkWeather(city) {
-//     const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
-
-//     if(response.status == 404){
-//         document.querySelector(".error").style.display = "block"
-//         document.querySelector(".weather").style.display = "none"
-//     }else {
-//         var data = await response.json()
-        
-//         //data update
-//         document.querySelector(".city").innerHTML = data.name
-//         document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + " °C"
-//         document.querySelector(".humidity").innerHTML = data.main.humidity + "%"
-//         document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + " km/h"
-    
-//         //img update
-//         }else if(data.weather[0].main=="Mist"){
-//             weatherIcon.src = "./img/mist.png"
-//             document.querySelector(".card").style.background= "linear-gradient(140deg, rgba(131,171,208,1) 0%, rgba(202,225,255,1) 100%)"
-//         }
-    
-//         document.querySelector(".weather").style.display = "block"
-//         document.querySelector(".error").style.display = "none"
-//     }
-
-// }
-
-// searchBtn.addEventListener("click", ()=> {
-//     checkWeather(searchBox.value)
-// })

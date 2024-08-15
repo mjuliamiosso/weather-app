@@ -19,6 +19,56 @@
     --yellow: #ffcd4f;
 }
 
+/* ERRO */
+.error{
+    display: none;
+    font-size: 20px;
+    margin-top: 10px;
+    animation-name: bounce;
+    animation-duration: .5s;
+    animation-delay: 0.25s;
+}
+
+@keyframes bounce {
+    0% {
+      transform: translateY(0px);
+      timing-function: ease-in;
+    }
+    37% {
+      transform: translateY(-5px);
+      timing-function: ease-out;
+    }
+    55% {
+      transform: translateY(5px);
+      timing-function: ease-in;
+    }
+    73% {
+      transform: translateY(-4px);
+      timing-function: ease-out;
+    }
+    82% {
+      transform: translateY(4px);
+      timing-function: ease-in;
+    }
+    91% {
+      transform: translateY(-2px);
+      timing-function: ease-out;
+    }
+    96% {
+      transform: translateY(2px);
+      timing-function: ease-in;
+    }
+    100% {
+      transform: translateY(0px);
+      timing-function: ease-in;
+    }
+  }
+
+.right-side{
+    display: none;
+    flex-direction: column;
+}
+
 .text-shadow{
     text-shadow: 0 4px 4px rgba(24, 27, 51, 0.356);
 }
@@ -52,7 +102,6 @@ main{
     padding-right: 10px;
     margin-left: auto;
     margin-right: auto;
-    height: 58.3vh;
 }
 
 /* Barra de Pesquisa */
@@ -110,7 +159,7 @@ main{
     backdrop-filter: blur(3px);
     border-radius: 6px;
     padding: 10px 20px;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -201,24 +250,13 @@ main{
     font-size: 14px;
 }
 
-/* Footer */
-footer{
-    height: 80px;
-    background-color: rgb(24, 29, 34);
-    margin-top: 65px;
-    display: flex;
-    align-items: center;
-}
-
-footer p{
-    width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
 /* RESPONSIVO */
 @media(min-width: 900px){
+    .error{
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
     header h1{
         font-size: 64px;
     }
@@ -226,7 +264,6 @@ footer p{
     main{
         max-width: 1440px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
     
@@ -338,18 +375,6 @@ footer p{
     
     /* Divisão do conteudo */
     .right-side{
-        display: flex;
-        flex-direction: column;
         justify-content: space-between;
-    }
-    /* Footer */
-    footer{
-        margin-top: 85px;
-    }
-    
-    footer p{
-        width: 1440px;
-        text-align: end;
-        padding-right: 10px;
     }
 }
