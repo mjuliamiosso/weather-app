@@ -1,5 +1,5 @@
 # Clima e Previsão do Tempo
-Fiz este site para praticar a implementação de APIs, onde você pode ver o clima das cidades. O objetivo é desenvolver minhas habilidades em desenvolvimento web e integração de serviços, permitindo que os usuários obtenham informações meteorológicas em tempo real de diversas localidades. Isso também me ajuda a compreender melhor como as APIs funcionam e como integrar dados de diferentes fontes de forma eficiente.
+Criei este site utilizando uma API para consultar o clima e a previsão do tempo. O principal objetivo foi aprimorar minhas habilidades na integração de serviços, permitindo que os usuários acessem informações meteorológicas em tempo real de diversas localidades. Além disso, este projeto me permitiu aprofundar o conhecimento sobre o funcionamento das APIs e a integração eficiente de dados de várias fontes.
 
 - [Deploy](https://mjuliamiosso.github.io/weather-app/)
 
@@ -13,4 +13,4 @@ Fiz este site para praticar a implementação de APIs, onde você pode ver o cli
 
 * **font-awesome**
 * **[icones](https://github.com/basmilius/weather-icons)**
-* **[Imagens](https://www.freepik.com/)**
+* **[Imagens usadas do Freepik](https://www.freepik.com/)**
