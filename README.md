@@ -1,7 +1,7 @@
 # Clima e Previsão do Tempo
 Criei este site utilizando uma API para consultar o clima e a previsão do tempo. O principal objetivo foi aprimorar minhas habilidades na integração de serviços, permitindo que os usuários acessem informações meteorológicas em tempo real de diversas localidades. Além disso, este projeto me permitiu aprofundar o conhecimento sobre o funcionamento das APIs e a integração eficiente de dados de várias fontes.
 
-- [Deploy](https://mjuliamiosso.github.io/weather-app/)
+- [Deploy](https://weather-app-mjuliamiossos-projects.vercel.app/)
 
 ## 💻 Tecnologias Utilizadas
 
