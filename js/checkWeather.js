@@ -1,9 +1,9 @@
 const apiKey = "66a514829c5d31614e9aadd6c85d6d40"
 const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?units=metric&lang=pt_br&q="
-
 const city = document.getElementById('search')
 const weatherIcon = document.getElementById('weatherIcon')
 const body = document.getElementsByTagName('body')[0]
+const button = document.getElementById("button")
 let dayPreview = document.querySelector('.day-preview')
 let weekPreview = document.querySelector('.week-preview')
 
@@ -79,10 +79,10 @@ async function checkWeather(){
         dayList = ''
         for(var i = 0; i <= 4; i++){
             let hour = data.list[i].dt_txt
-            const hourSplit = hour.split(" ")
+            const hourSlice = hour.slice(11, 16)
             dayList += ` 
                 <div class="day-container">
-                    <p class="day-time">${hourSplit[1]}</p>
+                    <p class="day-time">${hourSlice}</p>
                     <p class="day-weather">${Math.round(data.list[i].main.temp)}ºC</p>
                 </div>
             `
@@ -93,11 +93,13 @@ async function checkWeather(){
         weekList = ''
         for(var i = 7; i <= 40; i += 8){
             let weekDay = data.list[i].dt_txt
-            const weekSplit = weekDay.split(" ")
+            const weekDaySlice = weekDay.slice(8, 10)
+            const weekMonthSlice = weekDay.slice(5, 7)
+            const weekYearSlice = weekDay.slice(0, 4)
             weekList += `
                 <hr>
                 <div class="week-container">
-                    <p class="week-day">${weekSplit[0]}</p>
+                    <p class="week-day">${weekDaySlice}/${weekMonthSlice}/${weekYearSlice}</p>
                     <p class="week-weather">${Math.round(data.list[i].main.temp) + " Cº"}</p>
                 </div>
             `
@@ -109,6 +111,5 @@ async function checkWeather(){
         document.querySelector(".status").style.display = "grid"
         document.querySelector("#main").style.gridTemplateColumns = "1fr 1fr"
         document.querySelector(".error").style.display = "none"
-
     }
 }
