@@ -4,6 +4,7 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?units=metric&la
 const city = document.getElementById('search')
 const weatherIcon = document.getElementById('weatherIcon')
 const body = document.getElementsByTagName('body')[0]
+const button = document.getElementById("button")
 let dayPreview = document.querySelector('.day-preview')
 let weekPreview = document.querySelector('.week-preview')
 
@@ -114,3 +115,11 @@ async function checkWeather(){
 
     }
 }
+
+//FUNCAO DE APERTAR O ENTER E PESQUISAR
+city.addEventListener("keyup", e => {
+    e.preventDefault()
+    if(e.keyCode === 13 ){
+        checkWeather()
+    }
+})
