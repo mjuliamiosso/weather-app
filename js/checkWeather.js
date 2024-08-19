@@ -1,6 +1,5 @@
 const apiKey = "66a514829c5d31614e9aadd6c85d6d40"
 const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?units=metric&lang=pt_br&q="
-
 const city = document.getElementById('search')
 const weatherIcon = document.getElementById('weatherIcon')
 const body = document.getElementsByTagName('body')[0]
@@ -112,14 +111,5 @@ async function checkWeather(){
         document.querySelector(".status").style.display = "grid"
         document.querySelector("#main").style.gridTemplateColumns = "1fr 1fr"
         document.querySelector(".error").style.display = "none"
-
     }
 }
-
-//FUNCAO DE APERTAR O ENTER E PESQUISAR
-city.addEventListener("keyup", e => {
-    e.preventDefault()
-    if(e.keyCode === 13 ){
-        checkWeather()
-    }
-})

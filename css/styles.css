@@ -67,6 +67,7 @@
 .right-side{
     display: none;
     flex-direction: column;
+    margin-bottom: 75px;
 }
 
 .text-shadow{
@@ -375,6 +376,7 @@ main{
     
     /* Divisão do conteudo */
     .right-side{
+        margin-bottom: 0;
         justify-content: space-between;
     }
 }
