@@ -3,6 +3,8 @@ Criei este site utilizando uma API para consultar o clima e a previsão do tempo
 
 - [Deploy](https://weather-app-mjuliamiossos-projects.vercel.app/)
 
+<img src="./img/weather-app.gif">
+
 ## 💻 Tecnologias Utilizadas
 
 * **HTML**
